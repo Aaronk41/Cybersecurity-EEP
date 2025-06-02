@@ -41,7 +41,7 @@ public class MotorController
         Console.WriteLine("Motor controller emergency stop!");
         _leftMotorSpeed = 0;
         _rightMotorSpeed = 0;
-        // In a real system, this would immediately cut power to motors
+        
         _isEnabled = false;
     }
     
@@ -54,7 +54,7 @@ public class MotorController
         _rightMotorSpeed = Math.Clamp(right, -1.0, 1.0);
         
         Console.WriteLine($"Setting motor speeds - Left: {_leftMotorSpeed:0.00}, Right: {_rightMotorSpeed:0.00}");
-        // In a real system, this would send commands to the motor drivers
+        
     }
     
     public void StopAll()
