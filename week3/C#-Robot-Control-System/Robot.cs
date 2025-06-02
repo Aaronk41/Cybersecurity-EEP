@@ -106,7 +106,7 @@ public class Robot
         
         Console.WriteLine($"Turning left {degrees}°");
         MotorController.SetMotorSpeeds(-0.3, 0.3);
-        // In a real system, you'd use sensors to determine when the turn is complete
+        
         Thread.Sleep(degrees * 10); // Simplified timing
         MotorController.StopAll();
     }
@@ -117,7 +117,7 @@ public class Robot
         
         Console.WriteLine($"Turning right {degrees}°");
         MotorController.SetMotorSpeeds(0.3, -0.3);
-        // In a real system, you'd use sensors to determine when the turn is complete
+        
         Thread.Sleep(degrees * 10); // Simplified timing
         MotorController.StopAll();
     }
