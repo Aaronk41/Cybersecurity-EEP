@@ -65,7 +65,7 @@ public class NavigationSystem
         if (!_isEnabled) return;
         
         Console.WriteLine($"Calculating path to coordinates ({x},{y})");
-        // In a real system, this would use pathfinding algorithms
+        
         Console.WriteLine("Path calculation complete (simulated)");
     }
 }
