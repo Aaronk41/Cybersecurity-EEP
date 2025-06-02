@@ -1,7 +1,11 @@
 flowchart TD
-    subgraph Defense_in_Depth
-        A[Physical] --> B[Network]
-        B --> C[Host]
-        C --> D[Application]
-        D --> E[Data]
+    subgraph Defense_Layers
+        A[🛡️ Physical] --> B[🌐 Network]
+        B --> C[💻 Host] --> D[📱 App]
+        D --> E[🔐 Data]
     end
+    style A fill:#ffe6e6
+    style B fill:#ffebcc
+    style C fill:#ffffcc
+    style D fill:#e6ffe6
+    style E fill:#e6f3ff
