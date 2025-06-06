@@ -1,5 +1,5 @@
 def caesar_cipher(text, shift, mode="encrypt"):
-    result = ""
+result = ""
     for char in text:
         if char.isalpha():
             offset = 65 if char.isupper() else 97
