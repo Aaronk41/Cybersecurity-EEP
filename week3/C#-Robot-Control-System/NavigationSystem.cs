@@ -4,7 +4,7 @@ public class NavigationSystem
     private bool _isInitialized = false;
     private bool _isEnabled = false;
     
-    // Simple map representation
+
     private List<string> _mapLog = new List<string>();
     
     public NavigationSystem(Robot robot)
