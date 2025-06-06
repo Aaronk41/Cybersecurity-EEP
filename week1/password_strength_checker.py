@@ -16,13 +16,11 @@ def check_password_strength(password, common_passwords):
     length = len(password)
     score = 0
 
-    # Length check
     if length >= 12:
         score += 2
     elif length >= 8:
         score += 1
 
-    # Complexity checks
     if re.search(r"[A-Z]", password):
         score += 1
     if re.search(r"[a-z]", password):
@@ -32,7 +30,6 @@ def check_password_strength(password, common_passwords):
     if re.search(r"[!@#$%^&*(),.?\":{}|<>]", password):
         score += 1
 
-    # Strength rating
     if score >= 5:
         return "Strong"
     elif score >= 3:
