@@ -12,7 +12,7 @@ public class MotorController
         if (_isInitialized) return;
         
         Console.WriteLine("Initializing motor controller...");
-        // Simulate hardware initialization
+        
         Thread.Sleep(500);
         _isInitialized = true;
         Console.WriteLine("Motor controller initialized.");
