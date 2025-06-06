@@ -4,7 +4,7 @@ public class Robot
     public bool IsPoweredOn { get; private set; }
     public bool IsEmergencyStopped { get; private set; }
     
-    // Subsystems
+
     public MotorController MotorController { get; private set; }
     public SensorArray Sensors { get; private set; }
     public NavigationSystem Navigation { get; private set; }
@@ -21,7 +21,7 @@ public class Robot
     {
         Console.WriteLine($"{Name} initializing...");
         
-        // Initialize subsystems
+      
         MotorController.Initialize();
         Sensors.Initialize();
         Navigation.Initialize();
@@ -52,7 +52,7 @@ public class Robot
     {
         Console.WriteLine($"{Name} stopping...");
         
-        // Graceful shutdown sequence
+       
         Navigation.Disable();
         Sensors.Disable();
         MotorController.Disable();
@@ -79,7 +79,7 @@ public class Robot
         Initialize();
     }
     
-    // Movement commands
+
     public void MoveForward(int durationMs)
     {
         if (!IsPoweredOn || IsEmergencyStopped) return;
@@ -107,7 +107,7 @@ public class Robot
         Console.WriteLine($"Turning left {degrees}°");
         MotorController.SetMotorSpeeds(-0.3, 0.3);
         
-        Thread.Sleep(degrees * 10); // Simplified timing
+        Thread.Sleep(degrees * 10); 
         MotorController.StopAll();
     }
     
@@ -118,7 +118,7 @@ public class Robot
         Console.WriteLine($"Turning right {degrees}°");
         MotorController.SetMotorSpeeds(0.3, -0.3);
         
-        Thread.Sleep(degrees * 10); // Simplified timing
+        Thread.Sleep(degrees * 10); 
         MotorController.StopAll();
     }
     
