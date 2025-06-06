@@ -3,7 +3,7 @@ public class MotorController
     private bool _isInitialized = false;
     private bool _isEnabled = false;
     
-    // Motor states (simplified - values between -1.0 and 1.0)
+    
     private double _leftMotorSpeed = 0;
     private double _rightMotorSpeed = 0;
     
