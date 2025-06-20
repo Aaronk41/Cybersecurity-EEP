@@ -1,6 +1,7 @@
 # Week1
 
-Worked on a kill-chain mermaid diagram and a password strength checker.
+-kill-chain mermaid diagram
+-Password strength checker.
 
 ## Information
 
