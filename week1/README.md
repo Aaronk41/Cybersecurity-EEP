@@ -1,7 +1,7 @@
 # Week1
 
--kill-chain mermaid diagram
--Password strength checker.
+- kill-chain mermaid diagram
+- Password strength checker.
 
 ## Information
 
