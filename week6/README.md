@@ -6,6 +6,7 @@
 
 - Mermaid Visualizations
 - Coursera coursework
+- Ransomware Detector
 
 ## Information
 In Week 6, I studied various password attack methods and visualized them using Mermaid.js.
