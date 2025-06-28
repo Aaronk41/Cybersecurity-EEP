@@ -5,6 +5,7 @@
 - PyShield Antivirus Project
 
 - Mermaid Visualizations
+- Coursera coursework
 
 ## Information
 In Week 6, I studied various password attack methods and visualized them using Mermaid.js.
