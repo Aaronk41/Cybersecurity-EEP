@@ -2,7 +2,8 @@ graph LR
     A[Hosts] --> B[LAN]
     B --> C[Switch]
     C --> D[Router]
-    C --> G((IDS))  %% Double circle shape
+    C --> G[IDS]
     D --> E[Firewall]
     E --> F[Modem]
     F --> H[Web Service]
+
