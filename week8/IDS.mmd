@@ -2,10 +2,7 @@ graph LR
     A[Hosts] --> B[LAN]
     B --> C[Switch]
     C --> D[Router]
-    C --> G((IDS))
+    C --> G[IDS]
     D --> E[Firewall]
     E --> F[Modem]
     F --> H[Web Service]
-    
-    style G fill=#fff,stroke=#f00,stroke-width:2px,stroke-dasharray: 5 5
-
