@@ -1,0 +1,10 @@
+graph LR
+    A[Hosts] --> B[LAN]
+    B --> C[Switch]
+    C --> D[Router]
+    C --> G[IDS]:::ids
+    D --> E[Firewall]
+    E --> F[Modem]
+    F --> G1[Web service]
+
+    classDef ids fill=#fff,color=red,stroke-dasharray: 5 5;
