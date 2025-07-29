@@ -1,1 +1,1 @@
-hot
+airbnb prediction
