@@ -1,1 +1,1 @@
-airbnb prediction
+airbnb price prediction in Japan
