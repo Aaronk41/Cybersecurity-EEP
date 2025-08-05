@@ -5,7 +5,7 @@
 - C2 Server Simulator (added .gitignore)  
 - CapsuleCorp Fake Login Portal and Galactic Database (Dragon Ball themed)  
 - Pokedex App with camera-based training model  
-- Shichi Tama Game: 2D Python game involving collecting 7 orbs via quiz questions  
+- Shichi Tama Game: 2D Python game involving collecting 7 magical orbs
 - URL Phishing Detector  
 
 ## Summary
