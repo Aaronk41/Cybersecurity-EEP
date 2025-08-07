@@ -1,13 +1,25 @@
 import socket
 import threading
+import json
+from crypto import generate_key_pair, encrypt_message, decrypt_message
+
+private_key, public_key_pem = generate_key_pair()
+user_keys = {}  # username -> public key pem
 
 def receive_messages(sock):
     while True:
         try:
-            msg = sock.recv(1024).decode()
-            if not msg:
+            data = sock.recv(4096)
+            if not data:
                 break
-            print(f"\n{msg}")
+
+            if data.startswith(b"__KEY_UPDATE__"):
+                key_data = json.loads(data[len(b"__KEY_UPDATE__"):].decode())
+                user_keys.update(key_data)
+                print("[KEYS UPDATED]")
+                continue
+
+            print(f"\n{data.decode()}")
         except:
             break
 
@@ -19,16 +31,20 @@ def start_client(host='127.0.0.1', port=5555):
     username = input()
     client.send(username.encode())
 
+    print(client.recv(1024).decode(), end="")
+    client.send(public_key_pem.encode())
+
     thread = threading.Thread(target=receive_messages, args=(client,), daemon=True)
     thread.start()
 
     try:
         while True:
             msg = input()
-            client.send(msg.encode())
+            client.send(msg.encode())  
     except KeyboardInterrupt:
         print("\nDisconnected.")
         client.close()
 
 if __name__ == "__main__":
     start_client()
+
