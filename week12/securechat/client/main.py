@@ -2,9 +2,11 @@ import socket
 import threading
 import json
 from crypto import generate_key_pair, encrypt_message, decrypt_message
+from shared.protocol import wrap_message, unwrap_message
 
 private_key, public_key_pem = generate_key_pair()
-user_keys = {}  # username -> public key pem
+user_keys = {}  # username -> public key PEM
+username = ""
 
 def receive_messages(sock):
     while True:
@@ -19,11 +21,21 @@ def receive_messages(sock):
                 print("[KEYS UPDATED]")
                 continue
 
-            print(f"\n{data.decode()}")
-        except:
+            msg_type, sender, content = unwrap_message(data)
+            if msg_type == "encrypted":
+                try:
+                    decrypted = decrypt_message(content, private_key)
+                    print(f"\n{sender} (encrypted): {decrypted}")
+                except:
+                    print(f"\n{sender} (encrypted): [Could not decrypt]")
+            else:
+                print(f"\n{sender}: {content.decode()}")
+        except Exception as e:
+            print(f"[ERROR] Receiving: {e}")
             break
 
 def start_client(host='127.0.0.1', port=5555):
+    global username
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((host, port))
 
@@ -39,8 +51,13 @@ def start_client(host='127.0.0.1', port=5555):
 
     try:
         while True:
-            msg = input()
-            client.send(msg.encode())  
+            msg = input("You (encrypted): ")
+            for user, pubkey in user_keys.items():
+                if user == username:
+                    continue
+                encrypted = encrypt_message(msg, pubkey)
+                wrapped = wrap_message("encrypted", username, encrypted)
+                client.send(wrapped)
     except KeyboardInterrupt:
         print("\nDisconnected.")
         client.close()
