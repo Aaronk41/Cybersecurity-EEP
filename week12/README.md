@@ -5,7 +5,7 @@
 - Started AI and Game Development courses for future learning  
 - Firewall Log Analyzer project  
 - JWT Token Validator project  
-- Japan Weather Alert Application using Japanese precipitation, temperature, and snowfall data  
+- Japan Weather Alert Application using Japanese precipitation, temperature, and snowfall data  (Has it's own repository)
 - Secure Chat Application with encryption features  
 
 ## Summary
