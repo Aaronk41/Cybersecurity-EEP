@@ -1,7 +1,0 @@
-dependencies:
-  flutter:
-    sdk: flutter
-  camera: ^0.10.5
-  flutter_tts: ^3.7.0
-  tflite_flutter: ^0.10.0
-  tflite_flutter_helper: ^0.5.0
